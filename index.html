@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Responsive Image Gallery with an accessible lightbox — 16 photographs in a CSS Grid layout, built with HTML5, CSS3 and vanilla JavaScript. Veda Technology Web Development Internship Task 9." />
+  <title>Responsive Image Gallery | Veda Technology Internship Task 9</title>
+  <meta name="author" content="Abhishek Jadhav" />
+  <meta name="theme-color" content="#0f172a" />
+  <!-- Relative path, works offline and on GitHub Pages -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#gallery">Skip to gallery</a>
+
+  <div class="page">
+    <header class="page__header">
+      <p class="eyebrow">Veda Technology &bull; Internship &bull; Task 9</p>
+      <h1>Responsive Image Gallery</h1>
+      <p class="subtitle">
+        Sixteen photographs arranged in a fluid CSS Grid. Select any image to open
+        the lightbox and browse with the arrow keys.
+      </p>
+
+      <dl class="facts">
+        <div class="facts__item">
+          <dt>Photographs</dt>
+          <dd id="factCount">16</dd>
+        </div>
+        <div class="facts__item">
+          <dt>Themes</dt>
+          <dd id="factThemes">5</dd>
+        </div>
+        <div class="facts__item">
+          <dt>Source</dt>
+          <dd>Unsplash</dd>
+        </div>
+      </dl>
+    </header>
+
+    <main>
+      <!-- ============ Gallery ============ -->
+      <section class="gallery-section" id="gallery" tabindex="-1" aria-labelledby="galleryHeading">
+        <h2 id="galleryHeading" class="visually-hidden">Gallery photographs</h2>
+
+        <!--
+          The grid is filled in by script.js from the ITEMS dataset, so the markup
+          and the data stay in separate places. A <noscript> note explains what
+          is missing when JavaScript is unavailable.
+        -->
+        <ul class="gallery" id="galleryGrid"></ul>
+
+        <noscript>
+          <p class="noscript">
+            This gallery builds its grid with JavaScript. Please enable JavaScript to
+            view the 16 photographs.
+          </p>
+        </noscript>
+      </section>
+
+      <!-- ============ Keyboard hints ============ -->
+      <section class="tips" aria-labelledby="tipsHeading">
+        <h2 id="tipsHeading">Using the lightbox</h2>
+        <ul class="tips__list">
+          <li><span class="key">Click</span> a photograph to enlarge it</li>
+          <li><span class="key">&larr;</span><span class="key">&rarr;</span> move between images</li>
+          <li><span class="key">Esc</span> close the preview</li>
+          <li><span class="key">Tab</span> reach the close and arrow buttons</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="page__footer">
+      <p>
+        Photographs courtesy of <a href="https://unsplash.com" rel="noopener noreferrer" target="_blank">Unsplash</a>.
+      </p>
+      <p>
+        Veda Technology &bull; 45-Day Web Development Internship &bull;
+        Task 9: Responsive Image Gallery &bull; Built by Abhishek Jadhav
+      </p>
+    </footer>
+  </div>
+
+  <!-- ======================================================================
+       Lightbox / image preview
+       A native <dialog> opened with showModal() gives correct modal semantics,
+       focus containment and Escape handling from the browser itself.
+       ====================================================================== -->
+  <dialog class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+    <div class="lightbox__frame">
+      <!-- Close -->
+      <button type="button" class="lightbox__btn lightbox__btn--close" id="lightboxClose">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            d="M6 6l12 12M18 6L6 18" />
+        </svg>
+        <span class="visually-hidden">Close image preview</span>
+      </button>
+
+      <!-- Previous — sits to the left of the photograph on wide screens -->
+      <button type="button" class="lightbox__btn lightbox__btn--prev" id="lightboxPrev">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            d="M15 5l-7 7 7 7" />
+        </svg>
+        <span class="visually-hidden">Previous image</span>
+      </button>
+
+      <figure class="lightbox__figure">
+        <div class="lightbox__stage">
+          <!-- Placeholder src keeps the element valid before JavaScript fills it in -->
+          <img id="lightboxImage" class="lightbox__image" src="" alt="" decoding="async" />
+        </div>
+
+        <!-- Announced politely whenever the image changes -->
+        <figcaption class="lightbox__caption" aria-live="polite">
+          <p class="lightbox__category" id="lightboxCategory"></p>
+          <h2 class="lightbox__title" id="lightboxTitle"></h2>
+          <p class="lightbox__counter" id="lightboxCounter"></p>
+          <p class="lightbox__notice" id="lightboxNotice" hidden>
+            This photograph could not be downloaded, so a placeholder is shown.
+          </p>
+        </figcaption>
+      </figure>
+
+      <!-- Next — sits to the right of the photograph on wide screens -->
+      <button type="button" class="lightbox__btn lightbox__btn--next" id="lightboxNext">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            d="M9 5l7 7-7 7" />
+        </svg>
+        <span class="visually-hidden">Next image</span>
+      </button>
+    </div>
+  </dialog>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
