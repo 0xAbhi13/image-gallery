@@ -22,9 +22,6 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1200&color=1E293B&center=true&vCenter=true&width=660&lines=Click+a+photo...%F0%9F%93%B7;Full-screen+preview+%E2%80%A2+%E2%86%90+%E2%86%92+to+browse;No+frameworks+%E2%80%A2+No+build+%E2%80%A2+Just+HTML%2C+CSS+and+JS" alt="Greeting typing animation" />
 </div>
 
-Responsive Image Gallery of **Abhishek Jadhav** — Web Developer & first-year BCA student at VIIT, Baramati. Built with **HTML5 + CSS3 + Vanilla JavaScript**: no frameworks, no libraries, no build step, and no backend.
-
-> **Internship attribution:** 45-day Web Development Internship at **Veda Technology** — Task 9: Responsive Image Gallery with Lightbox.
 
 <details>
 <summary><b>📖 Table of Contents (click to expand)</b></summary>
@@ -261,7 +258,6 @@ No install or build step. ✨
    - Or VS Code **Live Server**: right-click `index.html` → **Open with Live Server**.
 3. 🎉 Styling loads from `style.css`, logic from `script.js`, icon from `assets/favicon.svg`.
 
-> The photographs are fetched from the Unsplash CDN at runtime, so an **internet connection is required** to see them. With no connection the page still renders completely — every card simply shows the built-in "Image unavailable" placeholder instead of a photo.
 
 Quick syntax check (Node, from the project folder):
 
@@ -338,129 +334,6 @@ node --check script.js
 **Mobile lightbox — 390 × 844**
 
 ![Lightbox on a mobile screen](./assets/screenshot-mobile-lightbox.png)
-
----
-
-## 🧪 Testing Checklist
-
-**Real browser — Microsoft Edge 155 (headless, DevTools Protocol): 124 / 124 passed**
-
-- [x] Page loads from `file://`; `style.css` applies and `script.js` executes.
-- [x] 16 tiles render, each a native `<button type="button">` wrapping one `<img>`.
-- [x] Every image has unique, meaningful `alt` text; every tile has an `aria-label`.
-- [x] Grid resolves to 4 / 4 / 3 / 3 / 2 / 2 columns at 1440 / 1100 / 820 / 600 / 390 / 320 px.
-- [x] **No horizontal scrolling at any of those six widths**; every tile inside the viewport.
-- [x] Every thumbnail keeps an exact 4:3 frame at every width, with `object-fit: cover`.
-- [x] All 16 photographs downloaded from the CDN; 4 eager + 12 lazy.
-- [x] Clicking a thumbnail opens a real modal (`dialog.open` and `:modal` both true).
-- [x] Counter reads `5 / 16` for the fifth photo, with matching title, category and alt text.
-- [x] Next / Previous buttons and `→` / `→` / `←` all step the counter correctly.
-- [x] Next on image 16 wraps to 1; Previous on 1 wraps to 16; stable over 19 advances.
-- [x] `Esc` closes; the close button closes; clicking the dark overlay closes.
-- [x] Clicking **on the photograph** does not close it; clicking the caption does not close it.
-- [x] Background scrolling locked while open and restored on close, padding removed.
-- [x] Focus returns to the exact thumbnail that opened the preview.
-- [x] `Tab` cycles only between the three controls and never escapes to the page.
-- [x] Open → navigate → close repeated 4/4 times with no leftover state.
-- [x] Forced image failure: both URLs tried, then the placeholder drawn — no broken icon, card keeps its size.
-- [x] `prefers-reduced-motion: reduce` collapses animation to `0.000001s` and the modal still closes.
-- [x] At 390 px the lightbox has no horizontal scroll and all three buttons are ≥ 44 px.
-- [x] Previous sits left of the photo, Next sits right of it, neither overlaps, photo centred.
-- [x] Favicon loads from the local relative path.
-- [x] **No uncaught exceptions and no console errors.**
-
-**Static and logic suite — Node.js 24: 97 / 97 passed**
-
-- [x] Doctype, `lang`, charset, viewport, exactly one `<h1>`, meta description, semantic landmarks.
-- [x] Every `<button>` declares `type="button"`; no inline `on*` handlers; no inline `<script>` blocks.
-- [x] No `eval()`, no `new Function()`, no `innerHTML`, no `document.write`; strict mode + IIFE.
-- [x] Every `getElementById()` target in `script.js` exists in the HTML.
-- [x] All linked local files exist and all paths are relative.
-- [x] CSS: custom properties, `display: grid`, `auto-fill` + `minmax()`, `object-fit` cover **and**
-      contain, media queries, `prefers-reduced-motion`, `:focus-visible`, `::backdrop`, balanced braces.
-- [x] Dataset: 16 items, no duplicate ids, titles, alt text or photo ids, all 5 themes present.
-- [x] **Live HTTP check: all 16 photograph URLs returned 200 with a valid `image/*` body.**
-- [x] `node --check script.js` passes.
-
-**Bugs found and fixed during testing**
-
-| Bug | Cause | Fix |
-|-----|-------|-----|
-| Tab escaped the lightbox onto the page | Handler only *corrected* focus after it had already left | Explicit focus trap cycling the dialog's controls |
-| Both arrow buttons sat left of the photo | `next` button was written before `<figure>` | Moved `next` after the figure |
-| Arrow buttons stacked vertically on mobile | `flex-direction: column` + `order` | Grid `areas`, keeping one DOM order for both layouts |
-| Cached thumbnails could stay invisible | `load` listener attached after render; image already complete | Re-check `img.complete` after rendering |
-| Skip link moved focus nowhere | Targeted a `<ul>`, which is not focusable | `id` moved to the `<section>` with `tabindex="-1"` |
-
-**Not verified here:** Firefox and Safari behaviour, real touch gestures on a physical phone, and actual
-screen-reader output (NVDA / Narrator / VoiceOver). Automated checks confirm the ARIA attributes and
-focus behaviour are correct, but cannot prove how a given screen reader announces them.
-
----
-
-## 🌐 Deployment
-
-**GitHub Pages:**
-
-```powershell
-Set-Location "<path-to>\internship-task-9"
-git init -b main
-git add index.html style.css script.js README.md Veda_Technology_Task_9_Project_Report.docx assets
-git commit -m "Task 9: Responsive Image Gallery with lightbox (HTML + CSS + JS)"
-git remote add origin <your-repository-url>
-git push -u origin main
-```
-
-Then GitHub → **Settings → Pages → Deploy from a branch → `main` / root** → GitHub shows your live URL.
-
-> Keep `index.html`, `style.css`, `script.js`, and `assets/` together with relative links so Pages
-> resolves them correctly. The repository URL above is a placeholder — replace it with your real repo.
-> **Nothing has been committed or pushed yet, and no repository has been created**; the commands are
-> provided for the submission step only.
-
----
-
-## 🖼️ Image Source & Attribution
-
-All 16 photographs are served from the **Unsplash** image CDN (`https://images.unsplash.com/`) using
-their standard public photo URLs.
-
-- Unsplash home: <https://unsplash.com>
-- Unsplash licence: <https://unsplash.com/license> — free to use with no attribution required, though
-  it is credited here as good practice.
-
-The photographs remain the property of their respective Unsplash photographers. This project is an
-educational exercise for a Veda Technology internship and is not endorsed by Unsplash.
-
----
-
-## ⚠️ Limitations
-
-- **An internet connection is required** to display the photographs — they load from the CDN at runtime.
-  Offline, the gallery still renders but every card shows the "Image unavailable" placeholder by design.
-- **The fallback URLs are retries of the same photograph**, not mirrors on a different provider. They
-  cover a failed or rate-limited request; they cannot help if Unsplash is unreachable entirely, which
-  is what the local SVG placeholder is for.
-- **Wrapping, not clamping** — Next on the last image returns to the first. Intentional and consistent,
-  but it does mean you cannot stop at the end of the set.
-- **No preloading of neighbouring images**, so the first frame after a very fast arrow-key press may
-  take a moment on a slow connection.
-- **No filtering, search, favourites or download** — out of scope for Task 9; controls were kept
-  minimal on purpose.
-- **No data is stored or transmitted.** The gallery is entirely client-side.
-
----
-
-## 🔍 Accuracy Notes
-
-- Every test result quoted above came from suites actually executed against these files — no invented numbers.
-- Four genuine application bugs were found by testing and fixed (see the table in the Testing Checklist);
-  several other initial failures were traced to bugs in my own test harness, not in the app, and the
-  harness was corrected.
-- Alt text was written only after viewing each photograph, so no description is guessed.
-- Photographs are attributed to Unsplash and their photographers; no image is claimed as original work.
-- Skills are presented as *learning/using* at internship level.
-- The app makes no requests other than the photographs; README badges and typing images are documentation-only.
 
 ---
 
