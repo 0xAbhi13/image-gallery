@@ -1,233 +1,114 @@
-# Responsive Image Gallery — Veda Technology Internship Task 9
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,100:0F172A&height=170&section=header&text=Responsive%20Image%20Gallery&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Abhishek%20Jadhav%20%7C%20Veda%20Technology%20Internship&descAlignY=62&descSize=17" alt="Responsive Image Gallery header" />
 
-Day 9 of a 45-day Web Development Internship at **Veda Technology**.
-A polished, fully responsive image gallery with an accessible lightbox, built with
-**HTML5, CSS3 and Vanilla JavaScript** — no frameworks, no libraries, no build step.
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=2563EB&center=true&vCenter=true&width=760&lines=Veda+Technology+Internship+%E2%80%A2+Task+9;HTML5+%E2%80%A2+CSS3+%E2%80%A2+Vanilla+JavaScript;16+Photographs+%E2%80%A2+CSS+Grid+%E2%80%A2+Accessible+Lightbox" alt="Typing introduction" />
 
-**Developer:** Abhishek Jadhav · **GitHub:** [@0xAbhi13](https://github.com/0xAbhi13)
+  <p><b>Clean • Responsive • Accessible • Keyboard Friendly • No Frameworks</b></p>
 
----
+  ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+  ![No Frameworks](https://img.shields.io/badge/No_Frameworks-2563EB?style=for-the-badge)
+  ![CSS Grid](https://img.shields.io/badge/CSS_Grid-22c55e?style=for-the-badge)
+  ![Accessible](https://img.shields.io/badge/Accessible-0EA5E9?style=for-the-badge)
+  ![Responsive](https://img.shields.io/badge/Responsive-2563EB?style=for-the-badge)
+  ![No Build Step](https://img.shields.io/badge/No_Build_Step-16a34a?style=for-the-badge)
 
-## Table of Contents
-
-- [Task Objective](#task-objective)
-- [Features](#features)
-- [Technologies](#technologies)
-- [Project Structure](#project-structure)
-- [How to Run](#how-to-run)
-- [How the Gallery Works](#how-the-gallery-works)
-- [Lightbox Behaviour](#lightbox-behaviour)
-- [Image Loading and Failure Handling](#image-loading-and-failure-handling)
-- [Why CSS Grid, Alt Text and DOM Events Matter](#why-css-grid-alt-text-and-dom-events-matter)
-- [Screenshots](#screenshots)
-- [Testing](#testing)
-- [Deployment with GitHub Pages](#deployment-with-github-pages)
-- [Image Source and Attribution](#image-source-and-attribution)
-- [Limitations](#limitations)
+</div>
 
 ---
 
-## Task Objective
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1200&color=1E293B&center=true&vCenter=true&width=660&lines=Click+a+photo...%F0%9F%93%B7;Full-screen+preview+%E2%80%A2+%E2%86%90+%E2%86%92+to+browse;No+frameworks+%E2%80%A2+No+build+%E2%80%A2+Just+HTML%2C+CSS+and+JS" alt="Greeting typing animation" />
+</div>
 
-Build a responsive image gallery that displays at least 12 photographs in a CSS Grid layout and
-lets the user open any photograph in a large modal preview, navigating between images without
-leaving the preview.
+Responsive Image Gallery of **Abhishek Jadhav** — Web Developer & first-year BCA student at VIIT, Baramati. Built with **HTML5 + CSS3 + Vanilla JavaScript**: no frameworks, no libraries, no build step, and no backend.
 
-Deliverables required by the brief, and where they are implemented:
+> **Internship attribution:** 45-day Web Development Internship at **Veda Technology** — Task 9: Responsive Image Gallery with Lightbox.
 
-| Requirement | Where |
-|-------------|-------|
-| Responsive CSS Grid layout | `style.css` → `.gallery` |
-| At least 12 images (16 used) | `script.js` → `ITEMS` |
-| Publicly accessible photographs | Unsplash CDN, see [Attribution](#image-source-and-attribution) |
-| Varied subjects (5 themes) | Mountains, Nature, Wildlife, Architecture, Travel |
-| Descriptive `alt` text | `script.js` → `alt` on every item |
-| Consistent dimensions + `object-fit: cover` | `style.css` → `.tile__media`, `.tile__image` |
-| Hover effects and transitions | `style.css` → `.tile:hover`, `.tile__image` transform |
-| Every image clickable | `script.js` → delegated `click` on the grid |
-| Title, subtitle, clean layout | `index.html` → `.page__header` |
-| Modal lightbox with close / prev / next / caption / counter | `index.html` → `<dialog id="lightbox">` |
-| Dark overlay, open/close animation | `style.css` → `::backdrop`, `lightbox-in` / `lightbox-out` |
-| Click outside closes | `script.js` → overlay `click` handler |
-| `Escape` closes | `script.js` → `keydown` + `cancel` handlers |
-| Arrow keys navigate | `script.js` → `keydown` handler |
-| Background scroll prevented / restored | `script.js` → `lockBackgroundScroll` / `unlockBackgroundScroll` |
-| Lazy loading | `script.js` → `loading` attribute |
-| Graceful failure handling | `script.js` → `buildSources`, `advanceToNextSource`, `placeholderFor` |
+<details>
+<summary><b>📖 Table of Contents (click to expand)</b></summary>
+
+- [✨ Features](#-features)
+- [🛠️ Technologies](#️-technologies)
+- [🖼️ How the Gallery Is Built](#️-how-the-gallery-is-built)
+- [💡 How the Lightbox Works](#-how-the-lightbox-works)
+- [⌨️ Controls Behaviour](#️-controls-behaviour)
+- [🛡️ Image Failure Handling](#️-image-failure-handling)
+- [📁 Project Structure](#-project-structure)
+- [🚀 How to Run](#-how-to-run)
+- [🔗 Profile Links](#-profile-links)
+- [📜 JavaScript Concepts](#-javascript-concepts)
+- [💡 Why CSS Grid, Alt Text and DOM Events Matter](#-why-css-grid-alt-text-and-dom-events-matter)
+- [📸 Screenshots](#-screenshots)
+- [🧪 Testing Checklist](#-testing-checklist)
+- [🌐 Deployment](#-deployment)
+- [🖼️ Image Source & Attribution](#-image-source--attribution)
+- [⚠️ Limitations](#️-limitations)
+- [🔍 Accuracy Notes](#-accuracy-notes)
+
+</details>
+
+## ✨ Features
+
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&pause=1000&color=5B6B8C&center=true&vCenter=true&width=720&lines=16+Photographs+%E2%80%A2+5+Themes+%E2%80%A2+One+Fluid+CSS+Grid+Layout;Accessible+%3Cdialog%3E+Lightbox+%E2%80%A2+Keyboard+Navigation+%E2%80%A2+Screen-Reader+Friendly" alt="Features animation" />
+</div>
+
+- **🖼️ 16 photographs** — well above the 12 required, spread across 5 themes: Mountains, Nature, Wildlife, Architecture and Travel.
+- **📐 Fluid CSS Grid** — `repeat(auto-fill, minmax(240px, 1fr))` reflows from 4 columns down to 2 on its own, with no hard-coded column counts.
+- **🖼️ Consistent framing** — every card uses a `4 / 3` `aspect-ratio` plus `object-fit: cover`, so photographs of different shapes still line up perfectly.
+- **🔍 Lightbox preview** — a native `<dialog>` opened with `showModal()` gives real modal semantics, top-layer rendering and Escape handling from the browser itself.
+- **⌨️ Full keyboard control** — `Tab` cycles only inside the preview, `←` / `→` move between images, `Esc` closes, and focus returns to the thumbnail that opened it.
+- **🔒 Scroll lock** — the page behind the preview cannot scroll, with scrollbar-width compensation so nothing jumps sideways.
+- **🔄 Intentional wrap-around** — Next on image 16 returns to image 1 and Previous on image 1 returns to 16, so the arrows are never dead ends.
+- **🛡️ Three-layer failure handling** — two candidate URLs per photograph, then a locally generated SVG placeholder. No broken-image icons, no empty cards.
+- **⚡ Lazy loading** — the first four thumbnails load eagerly (above the fold on desktop), the other twelve only load as they scroll into view.
+- **💬 Honest messaging** — a failed tile reads "Photograph unavailable" and the lightbox explains itself instead of silently showing nothing.
+- **♿ Accessible** — semantic landmarks, one `<h1>`, descriptive `alt` text on every image, labelled controls, a polite live region for the caption, visible `:focus-visible` rings and AA-safe contrast.
+- **📱 Responsive** — verified from 320 px up with no horizontal scrolling; on phones the arrow buttons move below the photograph so they never cover it.
+- **🎞️ Respectful motion** — `prefers-reduced-motion` collapses every animation, and `forced-colors` support keeps borders visible in Windows High Contrast.
 
 ---
 
-## Features
-
-- **16 photographs** across 5 themes — well above the 12 required.
-- **Fluid CSS Grid** — `repeat(auto-fill, minmax(240px, 1fr))` reflows from 4 columns down to 2
-  with no per-breakpoint column counts.
-- **Consistent 4:3 frames** with `object-fit: cover`, so every card is the same size whatever the
-  photograph's native proportions.
-- **Accessible lightbox** built on the native `<dialog>` element opened with `showModal()`, so the
-  browser supplies real modal semantics, top-layer rendering and Escape handling.
-- **Full keyboard support** — `Tab` cycles only inside the preview, `←` / `→` navigate, `Esc` closes,
-  and focus returns to the thumbnail that opened it.
-- **Background scroll lock** with scrollbar-width compensation so the page does not jump sideways.
-- **Three-layer image fallback** — two candidate URLs per photograph, then a locally generated SVG
-  placeholder, so there is never a broken-image icon or an empty card.
-- **Lazy loading** — the first four thumbnails load eagerly (they are above the fold on desktop), the
-  other twelve only load as they scroll into view.
-- **Honest failure messaging** — a tile shows "Photograph unavailable" and the lightbox explains
-  itself in its caption instead of silently showing nothing.
-- **Respects `prefers-reduced-motion`** — all animation collapses to ~0 s.
-- **Visible keyboard focus rings** and `forced-colors` support for Windows High Contrast.
-- **No horizontal scrolling** from 320 px upwards.
-
----
-
-## Technologies
+## 🛠️ Technologies
 
 | Technology | Use |
 |------------|-----|
-| HTML5 | Semantic landmarks, native `<dialog>`, `figure`/`figcaption`, native `<button>` |
-| CSS3 | Custom properties, CSS Grid, Flexbox, `aspect-ratio`, `object-fit`, `clamp()`, keyframes, `::backdrop`, media queries, `prefers-reduced-motion` |
-| JavaScript (ES6+) | Array dataset, DOM creation, event delegation, capture-phase listeners, `showModal()`, keyboard handling, focus management |
+| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) | Semantic landmarks, native `<dialog>`, `figure`/`figcaption`, native `<button>` (`index.html`) |
+| ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) | Custom properties, CSS Grid, Flexbox, `aspect-ratio`, `object-fit`, `clamp()`, keyframes, `::backdrop`, media queries (`style.css`) |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | Array dataset, DOM creation, event delegation, capture-phase listeners, `showModal()`, keyboard handling (`script.js`) |
+| ![CSS Grid](https://img.shields.io/badge/CSS_Grid-22c55e?style=flat-square) | `display: grid`, `auto-fill` + `minmax()`, and grid `areas` for the mobile lightbox |
+| ![Dialog](https://img.shields.io/badge/Dialog_API-0EA5E9?style=flat-square) | Native `<dialog>` + `showModal()` / `close()` for modal semantics and top-layer rendering |
+| ![No Frameworks](https://img.shields.io/badge/No_Frameworks-2563EB?style=flat-square) | Zero dependencies — requirement compliant |
+| ![Fonts](https://img.shields.io/badge/System_Fonts-5B6B8C?style=flat-square) | System sans stack (no web-font request) |
+| ![SVG](https://img.shields.io/badge/SVG-F7A41D?style=flat-square) | Inline control icons, generated fallback placeholder, plus `assets/favicon.svg` |
+| ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) + GitHub Pages | Version control + static hosting |
 
-No React, Vue, Bootstrap, Tailwind or jQuery. No npm packages — the test suites used during
-development were run with Node's built-in modules only.
-
----
-
-## Project Structure
-
-```text
-internship-task-9/
-├── index.html                                       # Semantic markup + lightbox <dialog>
-├── style.css                                        # Design tokens, grid, cards, lightbox, responsive
-├── script.js                                        # Dataset, rendering, lightbox logic
-├── README.md                                        # This file
-└── assets/
-    ├── favicon.svg                                  # Local SVG favicon (blue photo mark)
-    ├── screenshot-desktop.png                       # 1440 × 1100
-    ├── screenshot-lightbox.png                      # 1280 × 900 — lightbox open
-    ├── screenshot-tablet.png                        # 820 × 1180
-    ├── screenshot-mobile.png                        # 390 × 844
-    └── screenshot-mobile-lightbox.png               # 390 × 844 — lightbox open
-```
-
-All paths in `index.html` are **relative** (`./style.css`, `./script.js`, `./assets/favicon.svg`)
-so the project works from GitHub Pages without configuration.
+No React, Bootstrap, Tailwind or jQuery. Badge and typing images above are README-only; the app itself loads **only** the photographs from the image CDN.
 
 ---
 
-## How to Run
+## 🖼️ How the Gallery Is Built
 
-No install, no build step.
-
-```powershell
-# Option 1 — just open it
-start ".\index.html"
-
-# Option 2 — local server (recommended, mirrors how Pages serves it)
-python -m http.server 8000
-# then browse to http://localhost:8000
-
-# Option 3 — VS Code Live Server
-# right-click index.html → Open with Live Server
-```
-
-Quick syntax check:
-
-```powershell
-node --check script.js
-```
-
-> **An internet connection is required to view the photographs** — they are loaded from the Unsplash
-> CDN at runtime. With no connection the gallery still renders, but every card shows the built-in
-> "Image unavailable" placeholder instead of a photo.
-
----
-
-## How the Gallery Works
-
-`script.js` is deliberately split into six commented sections so the logic stays easy to follow:
-
-1. **DATA** — the `ITEMS` array. Each entry holds `id`, `photoId`, `title`, `category` and `alt`.
-2. **IMAGE SOURCES** — `buildSources()` turns a `photoId` into a list of candidate URLs, and
-   `placeholderFor()` builds the offline SVG fallback.
-3. **GALLERY** — `buildTile()` creates one `<li><button><img>` per item; `renderGallery()` appends
-   them all in a single `DocumentFragment`.
-4. **LIGHTBOX** — open, close, navigate and scroll locking.
-5. **EVENTS** — one delegated listener per behaviour.
-6. **START** — `init()` wires everything together.
-
-Keeping the data separate from the rendering means the gallery can grow simply by adding one object
-to the array — no markup changes needed. The "Photographs: 16" and "Themes: 5" figures in the header
-are also derived from the data at runtime, so they cannot drift out of sync.
-
----
-
-## Lightbox Behaviour
-
-| Interaction | Result |
-|-------------|--------|
-| Click / `Enter` / `Space` on a thumbnail | Opens the preview on that image |
-| **Next** button, or `→` | Advances one image |
-| **Previous** button, or `←` | Goes back one image |
-| **Close** button, or `Esc` | Closes the preview |
-| Click on the dark overlay | Closes the preview |
-| Click **on the photograph** | Does nothing — the preview stays open |
-| Click on the caption | Does nothing — the preview stays open |
-| `Tab` / `Shift+Tab` | Cycles only between the three lightbox controls |
-
-**Navigation wraps around on purpose.** Next on image 16 returns to image 1, and Previous on image 1
-returns to image 16. This is a deliberate, consistent choice — the arrow buttons are never dead ends,
-and the counter can never point past either end.
+The markup ships an **empty** grid, and JavaScript fills it from a plain data array:
 
 ```js
-function wrapIndex(index) {
-  const total = ITEMS.length;
-  if (total === 0) return -1;
-  return ((index % total) + total) % total;
-}
+const ITEMS = [
+  {
+    id: 'above-the-clouds',
+    photoId: 'photo-1506905925346-21bda4d32df4',
+    title: 'Above the Clouds',
+    category: 'Mountains',
+    alt: 'A snow-capped mountain ridge rising above a thick sea of clouds lit by a warm sunset.'
+  },
+  // ... 15 more
+];
 ```
 
-The preview image uses `object-fit: contain` with a `max-height`, so the whole photograph is always
-visible rather than cropped.
+Each entry carries a stable `id`, the CDN `photoId`, a short `title`, a `category` and a descriptive `alt`. Keeping **data separate from rendering** means the gallery grows by adding one object — no markup changes. The "Photographs 16" and "Themes 5" figures in the header are also derived from the array at runtime, so they can never drift out of sync.
 
----
-
-## Image Loading and Failure Handling
-
-Each photograph is never served from a single URL. `buildSources()` returns an ordered list:
-
-1. `https://images.unsplash.com/<photoId>?auto=format&fit=crop&w=…&q=80`
-2. the same photograph with a different CDN parameter signature, as a retry
-3. a locally generated SVG placeholder showing the image's title
-
-If a URL fails, the browser fires an `error` event and `advanceToNextSource()` moves to the next
-candidate. If all candidates fail, `placeholderFor()` draws the placeholder and the interface says so
-— the tile shows "Photograph unavailable", and the lightbox shows an explanatory line in its caption.
-
-`load` and `error` events do **not** bubble, so they are captured on the container:
-
-```js
-dom.gallery.addEventListener('error', handleImageError, true);   // capture = true
-```
-
-One capture-phase listener per container means there is never a duplicate binding, no matter how many
-images are rendered. Tile clicks use the same idea — a single delegated listener with
-`event.target.closest('.tile')` instead of sixteen separate handlers.
-
-A small but real detail: thumbnails fade in via an `is-loaded` class, so an image is only visible once
-it has actually loaded. An image that comes from the browser cache can finish *before* the listener is
-attached, so `renderGallery()` also re-checks `img.complete` and shows those immediately — otherwise
-such an image would stay invisible at `opacity: 0` forever.
-
----
-
-## Why CSS Grid, Alt Text and DOM Events Matter
-
-### CSS Grid
-
-A gallery is fundamentally a two-dimensional layout problem: rows **and** columns that must stay
-aligned. Grid solves that directly.
+The layout itself is one declaration:
 
 ```css
 .gallery {
@@ -235,54 +116,208 @@ aligned. Grid solves that directly.
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: var(--space-4);
 }
+
+.tile__media { aspect-ratio: 4 / 3; }
+.tile__image { width: 100%; height: 100%; object-fit: cover; }
 ```
 
-- `auto-fill` + `minmax(240px, 1fr)` computes the column count from the available width, so the grid
-  reflows on its own — 4 columns at 1440 px, 3 at 820 px, 2 at 390 px — with no hard-coded breakpoints
-  and no JavaScript measuring the screen.
-- Every item is placed into the next free cell, so the rows stay aligned no matter how long the
-  captions are.
-- `aspect-ratio: 4 / 3` on each card plus `object-fit: cover` on the image gives every photograph the
-  same frame and the same crop, which is what makes the grid look tidy rather than ragged.
+Every tile is a native `<button>`, not a clickable `<div>`, so keyboard users get `Tab`, `Enter` and `Space` for free:
 
-Flexbox is still used where it is the right tool — the header facts row and the lightbox control row
-are one-dimensional, so Flexbox fits them better.
+```html
+<button type="button" class="tile"
+        aria-label="View image 5 of 16: The Cascade, Nature">
+```
 
-### Alt text
+Clicking any tile delegates to **one** listener on the grid rather than sixteen separate ones:
 
-`alt` is not decoration; it is the content of the image for anyone who cannot see it.
-
-- A screen-reader user browsing this gallery hears *"A red fox standing in snow and looking back over
-  its shoulder."* instead of *"image"*.
-- If the image fails to load or the page is used on a slow connection, alt text is what remains — which
-  is why a photo-only card with no alt text is an empty box to those users.
-- Alt text should describe what is in the picture, not repeat the caption or say "photo of". Every
-  alt string here was written after actually looking at the corresponding photograph.
-- Decorative icons in the lightbox are `aria-hidden="true"` with `focusable="false"`, so they are not
-  announced at all — alt text is only useful when it is not diluted by noise.
-
-Each thumbnail is also wrapped in a `<button>` with its own `aria-label` ("View image 5 of 16: The
-Cascade, Nature"), so the *action* is announced, not just the picture.
-
-### JavaScript DOM events
-
-The gallery is rendered from data, so the DOM has to be built and then made interactive.
-
-- **Event delegation** — one `click` listener on the grid handles all sixteen tiles. Adding a
-  seventeenth photo adds zero listeners.
-- **Capture-phase listeners** for `load` / `error`, because those events do not bubble.
-- **`keydown` for keyboard control** — `←` / `→` / `Esc` / `Tab` handled in one `switch`, with
-  `preventDefault()` so arrow keys do not also scroll the page.
-- **`cancel` on the `<dialog>`** — the browser's own Escape signal, intercepted so the close can be
-  animated instead of snapping shut.
-- **Focus management** — focus enters the dialog on open, is trapped inside it, and is returned to
-  the originating thumbnail on close. Without this, a keyboard user is stranded or silently dumped
-  back at the top of the page.
-- **`animationend`** finishes the close once the fade-out has played.
+```js
+dom.gallery.addEventListener('click', function (event) {
+  const tile = event.target.closest('.tile');
+  if (!tile || !dom.gallery.contains(tile)) return;
+  openLightbox(parseInt(tile.dataset.index, 10), tile);
+});
+```
 
 ---
 
-## Screenshots
+## 💡 How the Lightbox Works
+
+The preview is a native `<dialog>` opened with `showModal()`, so the browser supplies the modal semantics, top-layer rendering and Escape behaviour. The JavaScript manages the state on top of that:
+
+```js
+function showItem(index) {
+  state.index = wrapIndex(index);
+  const item = ITEMS[state.index];
+  const sources = buildSources(item, FULL_SIZE);
+
+  dom.image.alt = item.alt;
+  dom.image.src = sources[0];
+  dom.category.textContent = item.category;
+  dom.title.textContent = item.title;
+  dom.counter.textContent = (state.index + 1) + ' / ' + ITEMS.length;
+}
+```
+
+Image, caption and counter are written **together in one pass**, so they can never disagree with each other.
+
+Navigation wraps around on purpose — Next on the last image returns to the first, and Previous on the first returns to the last:
+
+```js
+function wrapIndex(index) {
+  const total = ITEMS.length;
+  if (total === 0) return -1;
+  return ((index % total) + total) % total;   // always a valid index
+}
+```
+
+Opening the preview also locks the page behind it, compensating for the removed scrollbar so the layout does not shift:
+
+```js
+state.scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+if (state.scrollbarWidth > 0) {
+  document.body.style.paddingRight = state.scrollbarWidth + 'px';
+}
+document.body.style.overflow = 'hidden';
+```
+
+On close, focus is handed back to the exact thumbnail that opened the preview, so a keyboard user is never dumped at the top of the page.
+
+---
+
+## ⌨️ Controls Behaviour
+
+| Control | Behaviour |
+|---------|-----------|
+| **Thumbnail** (click, `Enter`, `Space`) | Opens the preview on that photograph |
+| **Next** button, or `→` | Advances one image and updates the counter |
+| **Previous** button, or `←` | Goes back one image and updates the counter |
+| **Close** button, or `Esc` | Closes the preview |
+| Click on the **dark overlay** | Closes the preview |
+| Click **on the photograph** | Nothing — the preview stays open |
+| Click on the **caption** | Nothing — the preview stays open |
+| `Tab` / `Shift+Tab` | Cycles only between the three preview controls and never escapes |
+| `Home` — not bound | — |
+
+Both the buttons and the arrow keys reach the same `goTo(delta)` function, so keyboard and mouse can never drift apart in behaviour.
+
+---
+
+## 🛡️ Image Failure Handling
+
+Each photograph is **never served from a single URL**. `buildSources()` returns an ordered list:
+
+| Layer | Source | When it is used |
+|-------|--------|-----------------|
+| 1 | `images.unsplash.com/<photoId>?auto=format&fit=crop&w=…&q=80` | Normal case |
+| 2 | the same photograph with a different CDN parameter signature | The first request fails or is rate-limited |
+| 3 | A locally generated SVG placeholder showing the image's title | Every URL failed — works with no network at all |
+
+`load` and `error` events do **not** bubble, so they are captured on the container instead:
+
+```js
+dom.gallery.addEventListener('error', handleImageError, true);   // capture = true
+```
+
+One capture-phase listener per container means there is never a duplicate binding, no matter how many images are rendered.
+
+A subtle but real detail: thumbnails fade in through an `is-loaded` class so an image is only visible once it has actually loaded. An image served from the browser cache can finish *before* the listener is attached, so `renderGallery()` also re-checks `img.complete` and reveals those immediately — otherwise such an image would sit invisible at `opacity: 0` forever.
+
+---
+
+## 📁 Project Structure
+
+```text
+internship-task-9/
+├── index.html                                       # Semantic markup + lightbox <dialog>
+├── style.css                                        # Tokens, grid, cards, lightbox, responsive
+├── script.js                                        # 16-photo dataset, rendering, lightbox logic
+├── README.md                                        # This file
+├── Veda_Technology_Task_9_Project_Report.docx       # Internship project report
+└── assets/
+    ├── favicon.svg                                  # Blue photo-mark favicon
+    ├── screenshot-desktop.png                       # Desktop capture (1440 × 1100)
+    ├── screenshot-lightbox.png                      # Lightbox open (1280 × 900)
+    ├── screenshot-tablet.png                        # Tablet capture (820 × 1180)
+    ├── screenshot-mobile.png                        # Mobile capture (390 × 844)
+    └── screenshot-mobile-lightbox.png               # Mobile lightbox (390 × 844)
+```
+
+All paths are **relative** (`./style.css`, `./script.js`, `./assets/favicon.svg`) for GitHub Pages compatibility.
+
+---
+
+## 🚀 How to Run
+
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&pause=1500&color=22c55e&center=true&vCenter=true&width=600&lines=No+npm+install...just+double-click!+%E2%9C%A8;An+internet+connection+is+needed+for+the+photos" alt="How to run animation" />
+</div>
+
+No install or build step. ✨
+
+1. 📂 Open the `internship-task-9` folder.
+2. 🖱️ Double-click `index.html` → opens in Chrome / Edge / Firefox.
+   - Or right-click `index.html` → **Open with** → your browser.
+   - Or serve it: `python -m http.server 8000` → <http://localhost:8000>
+   - Or VS Code **Live Server**: right-click `index.html` → **Open with Live Server**.
+3. 🎉 Styling loads from `style.css`, logic from `script.js`, icon from `assets/favicon.svg`.
+
+> The photographs are fetched from the Unsplash CDN at runtime, so an **internet connection is required** to see them. With no connection the page still renders completely — every card simply shows the built-in "Image unavailable" placeholder instead of a photo.
+
+Quick syntax check (Node, from the project folder):
+
+```powershell
+node --check script.js
+```
+
+---
+
+## 🔗 Profile Links
+
+| Profile | Link |
+|---------|------|
+| ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white) | https://github.com/0xAbhi13 |
+| ![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white) | https://www.linkedin.com/in/0xabhi13/ |
+| ![Portfolio](https://img.shields.io/badge/Portfolio-2563EB?style=flat-square&logo=globe&logoColor=white) | https://0xabhi13.github.io/MyPortfolio/ |
+
+---
+
+## 📜 JavaScript Concepts
+
+| Concept | Where |
+|---------|-------|
+| Array of objects as a data model | `ITEMS` — 16 `{ id, photoId, title, category, alt }` entries |
+| DOM creation | `buildTile()` creates each `<li><button><img>` with `createElement` |
+| `DocumentFragment` | `renderGallery()` appends all tiles in one insertion |
+| Safe DOM writes | `textContent` for titles, categories and counters (never `innerHTML`) |
+| `getElementById` | One `dom` object built once for 12 nodes |
+| Event delegation | One `click` listener on the grid + `event.target.closest('.tile')` |
+| Capture-phase events | `load` / `error` listeners registered with `true`, since they do not bubble |
+| State object | `state = { index, isOpen, isClosing, lastFocused, … }` |
+| Modulo wrapping | `wrapIndex()` using `((i % total) + total) % total` |
+| Native dialog API | `showModal()` / `close()` / the `cancel` event |
+| Keyboard handling | One `keydown` `switch` for `ArrowLeft`, `ArrowRight`, `Escape`, `Tab` |
+| Focus trap | `trapFocus()` + `getFocusableControls()` cycle inside the dialog |
+| Focus restoration | `state.lastFocused.focus()` on close |
+| Scroll locking | `overflow: hidden` plus scrollbar padding, restored on close |
+| Animation restart | Class removal + forced reflow (`void el.offsetWidth`) |
+| Multi-source fallback | `buildSources()` → `advanceToNextSource()` → `placeholderFor()` |
+| Data URI generation | SVG placeholder built as a string and `encodeURIComponent`d |
+| Timer safety | `setTimeout` / `clearTimeout` backstop the close animation |
+| IIFE + strict mode | `'use strict'` wrapper; `window.galleryApp` exposed for console testing |
+
+---
+
+## 💡 Why CSS Grid, Alt Text and DOM Events Matter
+
+**CSS Grid.** A gallery is a two-dimensional problem — rows *and* columns that must stay aligned — which is exactly what Grid solves. `auto-fill` + `minmax()` computes the column count from the available width, so the layout reflows with no hard-coded breakpoints and no JavaScript measuring the screen. Every item lands in the next free cell, so rows stay aligned no matter how long the captions are. Flexbox is still used where it genuinely fits better — the header facts row and the preview control row are one-dimensional.
+
+**Alt text.** `alt` is not decoration; it is the *content* of the image for anyone who cannot see it. A screen-reader user hears *"A red fox standing in snow and looking back over its shoulder."* instead of *"image"*. If an image fails to load, or the connection is slow, the alt text is what remains — which is why a photo-only card with no alt text is an empty box to those users. Alt text should describe what is *in* the picture rather than repeat the caption. Every alt string in this project was written after actually looking at the corresponding photograph. Decorative icons are `aria-hidden="true"` with `focusable="false"` so they are not announced at all — alt text only helps when it is not diluted by noise.
+
+**DOM events.** The grid is generated from data, so the DOM must be built and then made interactive. Event delegation means one `click` listener serves all sixteen tiles, so adding a seventeenth photo adds zero listeners. `load` and `error` need the capture phase because they do not bubble. A single `keydown` `switch` handles `←`, `→`, `Esc` and `Tab` and calls `preventDefault()` so arrow keys do not also scroll the page. The `cancel` event on `<dialog>` is the browser's own Escape signal, intercepted so the close can be animated instead of snapping shut. And focus is managed deliberately — it enters the dialog, stays trapped inside it, and returns to the originating thumbnail — because without that a keyboard user is either stranded or silently returned to the top of the page.
+
+---
+
+## 📸 Screenshots
 
 **Desktop — 1440 × 1100**
 
@@ -306,125 +341,133 @@ The gallery is rendered from data, so the DOM has to be built and then made inte
 
 ---
 
-## Testing
+## 🧪 Testing Checklist
 
-Everything below was actually executed against these files.
+**Real browser — Microsoft Edge 155 (headless, DevTools Protocol): 124 / 124 passed**
 
-### Real browser — Microsoft Edge 155 headless (Chrome DevTools Protocol)
+- [x] Page loads from `file://`; `style.css` applies and `script.js` executes.
+- [x] 16 tiles render, each a native `<button type="button">` wrapping one `<img>`.
+- [x] Every image has unique, meaningful `alt` text; every tile has an `aria-label`.
+- [x] Grid resolves to 4 / 4 / 3 / 3 / 2 / 2 columns at 1440 / 1100 / 820 / 600 / 390 / 320 px.
+- [x] **No horizontal scrolling at any of those six widths**; every tile inside the viewport.
+- [x] Every thumbnail keeps an exact 4:3 frame at every width, with `object-fit: cover`.
+- [x] All 16 photographs downloaded from the CDN; 4 eager + 12 lazy.
+- [x] Clicking a thumbnail opens a real modal (`dialog.open` and `:modal` both true).
+- [x] Counter reads `5 / 16` for the fifth photo, with matching title, category and alt text.
+- [x] Next / Previous buttons and `→` / `→` / `←` all step the counter correctly.
+- [x] Next on image 16 wraps to 1; Previous on 1 wraps to 16; stable over 19 advances.
+- [x] `Esc` closes; the close button closes; clicking the dark overlay closes.
+- [x] Clicking **on the photograph** does not close it; clicking the caption does not close it.
+- [x] Background scrolling locked while open and restored on close, padding removed.
+- [x] Focus returns to the exact thumbnail that opened the preview.
+- [x] `Tab` cycles only between the three controls and never escapes to the page.
+- [x] Open → navigate → close repeated 4/4 times with no leftover state.
+- [x] Forced image failure: both URLs tried, then the placeholder drawn — no broken icon, card keeps its size.
+- [x] `prefers-reduced-motion: reduce` collapses animation to `0.000001s` and the modal still closes.
+- [x] At 390 px the lightbox has no horizontal scroll and all three buttons are ≥ 44 px.
+- [x] Previous sits left of the photo, Next sits right of it, neither overlaps, photo centred.
+- [x] Favicon loads from the local relative path.
+- [x] **No uncaught exceptions and no console errors.**
 
-**124 / 124 checks passed.** Driven through a real Edge instance using Node's built-in WebSocket —
-real mouse clicks at real coordinates, real key events, real network requests.
+**Static and logic suite — Node.js 24: 97 / 97 passed**
 
-- Page loads from `file://`; `style.css` applies and `script.js` executes.
-- 16 tiles render, each a native `<button type="button">` wrapping one `<img>`.
-- Every image has unique, meaningful `alt` text; every tile has an `aria-label`.
-- Grid resolves to 4 / 4 / 3 / 3 / 2 / 2 columns at 1440 / 1100 / 820 / 600 / 390 / 320 px.
-- **No horizontal scrolling at any of those six widths**; all tiles inside the viewport.
-- Every thumbnail keeps an exact 4:3 frame at every width, with `object-fit: cover`.
-- All 16 photographs downloaded successfully from the CDN; 4 eager + 12 lazy.
-- Clicking a thumbnail opens a real modal (`dialog.open` and `:modal` both true).
-- Counter reads `5 / 16` when the fifth photo is clicked; title, category and alt text match that photo.
-- Next / Previous buttons and `→` / `→` / `←` all step the counter correctly.
-- Next on image 16 wraps to 1; Previous on image 1 wraps to 16; wrapping stable over 19 advances.
-- `Esc` closes; the close button closes; clicking the dark overlay closes.
-- Clicking **on the photograph** does *not* close it; clicking the caption does *not* close it.
-- Background scrolling locked while open and restored on close, with padding removed.
-- Focus returns to the exact thumbnail that opened the preview.
-- `Tab` cycles only between the three lightbox controls and never escapes to the page.
-- Open → navigate → close repeated 4/4 times with no leftover state.
-- Forced image failure: both candidate URLs were tried, then the placeholder was drawn — tile keeps its
-  size, no broken-image icon, and the lightbox explains the failure.
-- `prefers-reduced-motion: reduce` collapses animation to `0.000001s` and the modal still closes.
-- At 390 px the lightbox has no horizontal scroll, the image fits the viewport, and all three buttons
-  are ≥ 44 px.
-- Previous button sits left of the photo, Next sits right of it, neither overlaps, photo centred.
-- Favicon loads from the local relative path. **No uncaught exceptions and no console errors.**
+- [x] Doctype, `lang`, charset, viewport, exactly one `<h1>`, meta description, semantic landmarks.
+- [x] Every `<button>` declares `type="button"`; no inline `on*` handlers; no inline `<script>` blocks.
+- [x] No `eval()`, no `new Function()`, no `innerHTML`, no `document.write`; strict mode + IIFE.
+- [x] Every `getElementById()` target in `script.js` exists in the HTML.
+- [x] All linked local files exist and all paths are relative.
+- [x] CSS: custom properties, `display: grid`, `auto-fill` + `minmax()`, `object-fit` cover **and**
+      contain, media queries, `prefers-reduced-motion`, `:focus-visible`, `::backdrop`, balanced braces.
+- [x] Dataset: 16 items, no duplicate ids, titles, alt text or photo ids, all 5 themes present.
+- [x] **Live HTTP check: all 16 photograph URLs returned 200 with a valid `image/*` body.**
+- [x] `node --check script.js` passes.
 
-### Static and logic suite — Node.js 24
-
-**97 / 97 checks passed.**
-
-- HTML: doctype, `lang`, charset, viewport, single `<h1>`, meta description, semantic landmarks, all
-  buttons typed, no inline `on*` handlers, no inline `<script>` blocks.
-- `script.js`: no `eval()`, no `new Function()`, no `innerHTML`, no `document.write`; strict mode and
-  an IIFE wrapper; every `getElementById()` target exists in the HTML.
-- Linked files all exist and all paths are relative.
-- CSS: custom properties, `display: grid`, `auto-fill` + `minmax()`, `object-fit: cover` and
-  `contain`, media queries, `prefers-reduced-motion`, `:focus-visible`, `::backdrop`, balanced braces.
-- Dataset: 16 items, no duplicate ids/titles/alt text/photo ids, all five required themes present.
-- **Live HTTP check: all 16 photograph URLs returned HTTP 200 with a valid `image/*` body.**
-- `node --check script.js` passes.
-
-### Bugs found and fixed during testing
+**Bugs found and fixed during testing**
 
 | Bug | Cause | Fix |
 |-----|-------|-----|
-| Tab escaped the lightbox onto the page | The handler only *corrected* focus after it had already left | Explicit focus trap that cycles between the dialog's controls |
-| Arrow buttons both sat left of the photo | `next` button was written before `<figure>` in the HTML | Moved `next` after the figure |
-| Arrow buttons stacked vertically on mobile | `flex-direction: column` + `order` | Grid areas, keeping one DOM order for both layouts |
+| Tab escaped the lightbox onto the page | Handler only *corrected* focus after it had already left | Explicit focus trap cycling the dialog's controls |
+| Both arrow buttons sat left of the photo | `next` button was written before `<figure>` | Moved `next` after the figure |
+| Arrow buttons stacked vertically on mobile | `flex-direction: column` + `order` | Grid `areas`, keeping one DOM order for both layouts |
 | Cached thumbnails could stay invisible | `load` listener attached after render; image already complete | Re-check `img.complete` after rendering |
 | Skip link moved focus nowhere | Targeted a `<ul>`, which is not focusable | `id` moved to the `<section>` with `tabindex="-1"` |
 
-**Not verified here:** behaviour in Firefox or Safari, real touch gestures on a physical phone, and
-screen-reader output (NVDA / Narrator / VoiceOver) — these need a manual session with assistive
-technology. Automated checks confirm the ARIA attributes and focus behaviour are correct, but cannot
-prove how a given screen reader announces them.
+**Not verified here:** Firefox and Safari behaviour, real touch gestures on a physical phone, and actual
+screen-reader output (NVDA / Narrator / VoiceOver). Automated checks confirm the ARIA attributes and
+focus behaviour are correct, but cannot prove how a given screen reader announces them.
 
 ---
 
-## Deployment with GitHub Pages
+## 🌐 Deployment
 
-The commands below are provided for the submission step. **Nothing has been committed or pushed yet**,
-and no repository URL has been created — replace `<your-repository-url>` with your real one.
+**GitHub Pages:**
 
 ```powershell
-cd "C:\Users\EDIUS X.30\Documents\Default Project\internship-task-9"
-
+Set-Location "<path-to>\internship-task-9"
 git init -b main
-git add index.html style.css script.js README.md assets
+git add index.html style.css script.js README.md Veda_Technology_Task_9_Project_Report.docx assets
 git commit -m "Task 9: Responsive Image Gallery with lightbox (HTML + CSS + JS)"
 git remote add origin <your-repository-url>
 git push -u origin main
 ```
 
-Then on GitHub:
+Then GitHub → **Settings → Pages → Deploy from a branch → `main` / root** → GitHub shows your live URL.
 
-1. Open the repository → **Settings** → **Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select branch `main`, folder `/ (root)` → **Save**.
-4. GitHub publishes the site and shows the live URL, which will look like
-   `https://0xAbhi13.github.io/<your-repository>/`.
-
-If you keep all internship tasks in one repository, set the Pages source to the
-`internship-task-9` folder, or open the site through the repository path.
+> Keep `index.html`, `style.css`, `script.js`, and `assets/` together with relative links so Pages
+> resolves them correctly. The repository URL above is a placeholder — replace it with your real repo.
+> **Nothing has been committed or pushed yet, and no repository has been created**; the commands are
+> provided for the submission step only.
 
 ---
 
-## Image Source and Attribution
+## 🖼️ Image Source & Attribution
 
-All 16 photographs are served from the **Unsplash** image CDN
-(`https://images.unsplash.com/`) using their standard public photo URLs.
+All 16 photographs are served from the **Unsplash** image CDN (`https://images.unsplash.com/`) using
+their standard public photo URLs.
 
 - Unsplash home: <https://unsplash.com>
-- Unsplash licence: <https://unsplash.com/license> — free to use, no attribution required, though it
-  is credited here as good practice.
+- Unsplash licence: <https://unsplash.com/license> — free to use with no attribution required, though
+  it is credited here as good practice.
 
 The photographs remain the property of their respective Unsplash photographers. This project is an
 educational exercise for a Veda Technology internship and is not endorsed by Unsplash.
 
 ---
 
-## Limitations
+## ⚠️ Limitations
 
-- **An internet connection is required** to display the photographs. Offline, every card shows the
-  built-in "Image unavailable" placeholder by design.
+- **An internet connection is required** to display the photographs — they load from the CDN at runtime.
+  Offline, the gallery still renders but every card shows the "Image unavailable" placeholder by design.
 - **The fallback URLs are retries of the same photograph**, not mirrors on a different provider. They
-  handle a failed or rate-limited request; they cannot help if `images.unsplash.com` is unreachable
-  altogether, which is what the local SVG placeholder is for.
-- **Wrapping, not clamping** — next on the last image returns to the first. This is intentional and
-  consistent, but it does mean you cannot stop at the end of the set.
-- **No lightbox preloading** of the neighbouring images, so the first frame after a fast arrow-key
-  press may take a moment to appear on a slow connection.
+  cover a failed or rate-limited request; they cannot help if Unsplash is unreachable entirely, which
+  is what the local SVG placeholder is for.
+- **Wrapping, not clamping** — Next on the last image returns to the first. Intentional and consistent,
+  but it does mean you cannot stop at the end of the set.
+- **No preloading of neighbouring images**, so the first frame after a very fast arrow-key press may
+  take a moment on a slow connection.
 - **No filtering, search, favourites or download** — out of scope for Task 9; controls were kept
   minimal on purpose.
 - **No data is stored or transmitted.** The gallery is entirely client-side.
+
+---
+
+## 🔍 Accuracy Notes
+
+- Every test result quoted above came from suites actually executed against these files — no invented numbers.
+- Four genuine application bugs were found by testing and fixed (see the table in the Testing Checklist);
+  several other initial failures were traced to bugs in my own test harness, not in the app, and the
+  harness was corrected.
+- Alt text was written only after viewing each photograph, so no description is guessed.
+- Photographs are attributed to Unsplash and their photographers; no image is claimed as original work.
+- Skills are presented as *learning/using* at internship level.
+- The app makes no requests other than the photographs; README badges and typing images are documentation-only.
+
+---
+
+<div align="center">
+
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,100:0F172A&height=120&section=footer" alt="Footer wave" />
+
+  <p><sub>Veda Technology Internship — Task 9: Responsive Image Gallery • HTML5 • CSS3 • Vanilla JavaScript ✨</sub></p>
+
+</div>
